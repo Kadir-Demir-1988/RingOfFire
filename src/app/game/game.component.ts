@@ -5,11 +5,12 @@ import { PlayerComponent } from '../player/player.component';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { MatDialog } from '@angular/material/dialog';
 import { SharedModule } from '../shared/shared.component';
+import { GameInfoComponent } from '../game-info/game-info.component';
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [CommonModule, PlayerComponent, SharedModule],
+  imports: [CommonModule, PlayerComponent, SharedModule, GameInfoComponent],
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
 })
@@ -38,6 +39,10 @@ export class GameComponent implements OnInit {
       this.game.playerCard.push(this.currentCard);
       console.log('New card: ', this.currentCard);
       console.log('Game is', this.game);
+
+      this.game.currentPlayer++;
+      this.game.currentPlayer =
+        this.game.currentPlayer % this.game.players.length;
 
       setTimeout(() => {
         this.game.playerCard.push(this.currentCard);

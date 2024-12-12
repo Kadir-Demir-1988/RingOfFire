@@ -3,6 +3,7 @@
   height: 100vh;
   max-width: 100%;
   background-image: url("/assets/img/cardbg.jpg");
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,13 +51,20 @@
   }
 }
 
-.player-position{
+.player-position {
   position: absolute;
   right: 0;
 }
 
-.btn-add{
+.btn-add {
   position: absolute;
   right: 32px;
   bottom: 32px;
+}
+
+.pin-bottom {
+  position: absolute;
+  bottom: 32px;
+  left: 100px;
+  right: 100px;
 }
